@@ -13,14 +13,22 @@ public class Activity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTitle("I AM Hello2");
+        setTitle("Hello2");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
-        Button Hello2=(Button) findViewById(R.id.Hello2);
-        Hello2.setOnClickListener(new View.OnClickListener(){
+        Button Hello1=(Button) findViewById(R.id.Hello1);
+        Hello1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(Activity2.this, HelloWorldActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button Hello3=(Button)findViewById(R.id.Hello3);
+        Hello3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Activity2.this,Activity3.class);
                 startActivity(intent);
             }
         });
