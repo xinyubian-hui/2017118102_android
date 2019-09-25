@@ -16,14 +16,6 @@ public class Activity3 extends AppCompatActivity {
         setTitle("Hello3");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
-        Button Hello2=(Button) findViewById(R.id.Hello2);
-        Hello2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Activity3.this, Activity2.class);
-                startActivity(intent);
-            }
-        });
         Button Hello1=(Button) findViewById(R.id.Hello1);
         Hello1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -32,6 +24,23 @@ public class Activity3 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button Hello2=(Button) findViewById(R.id.Hello2);
+        Hello2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity3.this, Activity2.class);
+                startActivity(intent);
+            }
+        });
+        Button Hello3=(Button) findViewById(R.id.Hello3);
+        Hello3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Activity3.this, Activity3.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

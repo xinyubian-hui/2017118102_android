@@ -24,6 +24,14 @@ public class Activity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button Hello2=(Button) findViewById(R.id.Hello2);
+        Hello2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Activity2.this, Activity2.class);
+                startActivity(intent);
+            }
+        });
         Button Hello3=(Button)findViewById(R.id.Hello3);
         Hello3.setOnClickListener(new View.OnClickListener() {
             @Override

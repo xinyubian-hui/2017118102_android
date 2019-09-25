@@ -16,6 +16,14 @@ public class HelloWorldActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTitle("Hello1");
         setContentView(R.layout.hello_world_layout);
+        Button Hello1 = (Button) findViewById(R.id.Hello1);
+        Hello1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HelloWorldActivity.this, HelloWorldActivity.class);
+                startActivity(intent);
+            }
+        });
         Button Hello2 = (Button) findViewById(R.id.Hello2);
         Hello2.setOnClickListener(new View.OnClickListener() {
             @Override
