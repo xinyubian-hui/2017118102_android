@@ -7,15 +7,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class HelloWorldActivity extends AppCompatActivity {
+public class HelloWorldActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "HelloWorldActivity";
+    //private static int objCount=0;
+    //private int mObjCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Hello1");
         setContentView(R.layout.hello_world_layout);
+      //  objCount++;
+       // mObjCount=objCount;
+        Log.d(TAG,"onCreat execute");
         Button Hello1 = (Button) findViewById(R.id.Hello1);
         Hello1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,9 +59,15 @@ public class HelloWorldActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPostResume() {
+        super.onPostResume();
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        //Log.d(TAG, msg:mobjCount+"-onPause");
     }
 
     @Override
@@ -68,6 +79,14 @@ public class HelloWorldActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //objCount--;
         Log.d(TAG, "onDestroy");
     }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+
 }
