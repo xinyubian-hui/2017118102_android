@@ -16,13 +16,8 @@ public class Activity3 extends AppCompatActivity {
         setTitle("Hello3");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
-
         Log.d(TAG,"onCreat execute");
        // settupButtons();
-
-
-
-
 
         Button Hello1=(Button) findViewById(R.id.Hello1);
         Hello1.setOnClickListener(new View.OnClickListener(){

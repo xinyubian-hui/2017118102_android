@@ -17,6 +17,7 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
         Log.d(TAG,"onCreat execute");
+
         Button Hello1=(Button) findViewById(R.id.Hello1);
         Hello1.setOnClickListener(new View.OnClickListener(){
             @Override
