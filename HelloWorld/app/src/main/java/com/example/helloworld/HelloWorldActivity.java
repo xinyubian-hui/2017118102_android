@@ -36,8 +36,8 @@ public class HelloWorldActivity extends AppCompatActivity implements View.OnClic
             public void onClick(View v) {
 //                Intent intent = new Intent(HelloWorldActivity.this, Activity2.class);
 //                startActivity(intent);
-                  Intent intent=new Intent(Intent.ACTION_DIAL);
-                  intent.setData(Uri.parse("tel:10086"));
+                  Intent intent=new Intent(Intent.ACTION_VIEW);
+                  intent.setData(Uri.parse("geo:"));
                   startActivity(intent);
             }
         });
