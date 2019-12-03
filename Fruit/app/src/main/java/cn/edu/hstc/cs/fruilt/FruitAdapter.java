@@ -14,20 +14,37 @@ import java.util.List;
 //创建一个自定义的适配器，继承自ArrayAdapter,并将泛型指定为Fruit类
 public class FruitAdapter extends ArrayAdapter<Fruit> {
     private int resourceId;
-    //该方法用于将上下文、ListView子项布局的id和数据都传递进来
-    public FruitAdapter(Context context, int textViewResourceId, List<Fruit> objects){
-        super(context,textViewResourceId,objects);
-        resourceId=textViewResourceId;
+    public FruitAdapter(Context context, int textViewResourceId,
+                        List<Fruit> objects) {
+        super(context, textViewResourceId, objects);
+        resourceId = textViewResourceId;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Fruit fruit = getItem(position); // 获取当前项的Fruit实例
+        View view;
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);
+            viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);
+            view.setTag(viewHolder); // 将ViewHolder存储在View中
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
         }
-        @Override
-        //该方法在每个子项被滚动到屏幕内的时候会被调用
-        public View getView(int position, View convertView, ViewGroup parent){
-            Fruit fruit=getItem(position);
-            View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);//false表示只让我们在父布局中声明的layout属性生效
-            ImageView fruitImage=(ImageView) view.findViewById(R.id. fruit_image);
-            TextView fruitName=(TextView) view.findViewById(R.id.fruit_name);
-            fruitImage.setImageResource(fruit.getImageId());
-            fruitName.setText(fruit.getName());
-            return view;
-        }
+        viewHolder.fruitImage.setImageResource(fruit.getImageId());
+        viewHolder.fruitName.setText(fruit.getName());
+        return view;
+    }
+
+    class ViewHolder {
+
+        ImageView fruitImage;
+
+        TextView fruitName;
+
+    }
 }
