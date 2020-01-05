@@ -19,3 +19,8 @@ HelloWorld文件
 实验六
 * 自加程序
 >>详情请见AndroidThreadTest文件README.md
+
+--------
+实验七
+* 异步任务处理
+>>详情请见AsyncTask文件README.md
