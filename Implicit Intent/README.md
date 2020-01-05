@@ -1,4 +1,5 @@
-���Ĵ���ҵ:��ʽIntent�ĵ���
- 1.<action android:name="android.intent.action.MAIN" />��actionע����android.intent.action.MAINʱ����Ϊ�������
- 2.��ʹ��ϵͳ����ʽ�ʱ,���Բ�����ע�ᡣ��ʹ�����Զ�������ʽ�Ҫ������Ӧ��ע�ᡣ
- 3.ʹ����ʽ��ͼ���Ա���̶����͵���ת(����:������Ҫ����һ����վ,����ʽʱ��Ҫ��ȷ���ֻ�����װ�������,����ʽ����Ҫ�˽����ֻ���Ӧ��)
+隐式Intent的调用
+===
+* <action android:name="android.intent.action.MAIN" />当action注册了android.intent.action.MAIN时会作为主活动启动
+* 当使用系统的隐式活动时,可以不进行注册。当使用了自定义了隐式活动要进行相应的注册。
+* 使用隐式意图可以避免固定类型的跳转(例如:当你需要访问一个网站,在显式时需要明确你手机所安装的浏览器,而隐式则不需要了解你手机的应用)
