@@ -24,3 +24,8 @@ HelloWorld文件
 实验七
 * 异步任务处理
 >>详情请见AsyncTask文件README.md
+
+--------
+实验八
+* 下载任务服务
+>>详情请见ServiceBestParctice文件README.md
